@@ -1,0 +1,361 @@
+.loyalty-hero-card {
+    background: linear-gradient(135deg, var(--blue-800) 0%, var(--blue-600) 100%);
+    border-radius: 24px;
+    padding: 32px 36px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+}
+
+.loyalty-hero-card::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(232, 200, 122, 0.12);
+}
+
+.loyalty-hero-card::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 30%;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.lhc-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.lhc-points-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(219, 234, 254, 0.7);
+    margin-bottom: 6px;
+}
+
+.lhc-points-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.lhc-points-sub {
+    font-size: 0.8rem;
+    color: rgba(219, 234, 254, 0.6);
+    margin-top: 6px;
+}
+
+.lhc-tier-badge {
+    background: rgba(232, 200, 122, 0.2);
+    border: 1px solid rgba(232, 200, 122, 0.4);
+    border-radius: 12px;
+    padding: 16px 22px;
+    text-align: center;
+    min-width: 130px;
+}
+
+.lhc-tier-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.lhc-tier-sub {
+    font-size: 0.7rem;
+    color: rgba(219, 234, 254, 0.6);
+    margin-top: 3px;
+}
+
+.progress-bar-wrap {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: rgba(219, 234, 254, 0.65);
+    margin-bottom: 8px;
+}
+
+.progress-track {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--accent-dk));
+    border-radius: 4px;
+    transition: width 1.2s cubic-bezier(.4, 0, .2, 1);
+}
+
+.tiers-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tier-card {
+    background: var(--white);
+    border: 1.5px solid var(--blue-100);
+    border-radius: 16px;
+    padding: 18px 14px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tier-card.active-tier {
+    border-color: var(--gold);
+    box-shadow: 0 4px 20px rgba(222, 175, 55, 0.25);
+}
+
+.tier-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.tier-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.tier-range {
+    font-size: 0.68rem;
+    color: var(--text-soft);
+    margin-top: 3px;
+}
+
+.tier-current-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--blue-900);
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-top: 6px;
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.reward-card {
+    background: var(--white);
+    border: 1px solid var(--blue-100);
+    border-radius: 16px;
+    padding: 20px 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.reward-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+.reward-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.reward-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.reward-desc {
+    font-size: 0.75rem;
+    color: var(--text-soft);
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.reward-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reward-cost {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--blue-500);
+}
+
+.reward-cost span {
+    font-size: 0.65rem;
+    font-family: 'Jost';
+    font-weight: 400;
+    color: var(--text-soft);
+}
+
+.btn-redeem {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--blue-900);
+    border: none;
+    padding: 7px 14px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-redeem:hover {
+    background: var(--accent-dk);
+}
+
+.btn-redeem:disabled {
+    background: var(--blue-100);
+    color: var(--text-soft);
+    cursor: not-allowed;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--blue-50);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.h-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.h-dot.earn {
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.h-dot.redeem {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.h-dot.bonus {
+    background: rgba(222, 175, 55, 0.15);
+}
+
+.h-dot svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke-width: 2;
+}
+
+.h-dot.earn svg {
+    stroke: #16a34a;
+}
+
+.h-dot.redeem svg {
+    stroke: #dc2626;
+}
+
+.h-dot.bonus svg {
+    stroke: var(--gold-dk);
+}
+
+.h-desc {
+    flex: 1;
+}
+
+.h-desc-main {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.h-desc-date {
+    font-size: 0.72rem;
+    color: var(--text-soft);
+    margin-top: 2px;
+}
+
+.h-pts {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.h-pts.earn {
+    color: #16a34a;
+}
+
+.h-pts.redeem {
+    color: #dc2626;
+}
+
+.h-pts.bonus {
+    color: var(--gold-dk);
+}
+
+@media(max-width:900px) {
+    .tiers-strip {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rewards-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width:560px) {
+    .tiers-strip {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rewards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lhc-inner {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,254 @@
+/* Credit card visual */
+.card-visual {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1.58;
+    border-radius: 18px;
+    padding: 22px 24px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 12px 40px rgba(10, 22, 40, .28);
+}
+
+.card-visual::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.card-visual::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 20px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cv-chip {
+    width: 38px;
+    height: 28px;
+    background: rgba(232, 200, 122, 0.7);
+    border-radius: 5px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.cv-chip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.cv-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    position: relative;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cv-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.cv-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 3px;
+}
+
+.cv-value {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cv-type {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cv-default-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--gold);
+    color: var(--blue-900);
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.cards-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-item-wrap {
+    position: relative;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+/* Add card form */
+.add-card-form {
+    display: none;
+}
+
+.add-card-form.open {
+    display: block;
+}
+
+/* Ewallet grid */
+.ewallet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.ewallet-item {
+    background: var(--white);
+    border: 1.5px solid var(--blue-100);
+    border-radius: 16px;
+    padding: 18px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: border-color 0.2s;
+}
+
+.ewallet-item.linked {
+    border-color: rgba(34, 197, 94, 0.3);
+    background: rgba(34, 197, 94, 0.02);
+}
+
+.ewallet-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.ewallet-info {
+    flex: 1;
+}
+
+.ewallet-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.ewallet-num {
+    font-size: 0.74rem;
+    color: var(--text-soft);
+    margin-top: 2px;
+}
+
+/* Billing table */
+.billing-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.billing-table th {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1.5px solid var(--blue-100);
+}
+
+.billing-table td {
+    font-size: 0.84rem;
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--blue-50);
+    color: var(--text-mid);
+}
+
+.billing-table tr:last-child td {
+    border-bottom: none;
+}
+
+.billing-table tr:hover td {
+    background: var(--blue-50);
+}
+
+.bt-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Card number input with dots */
+.card-num-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.card-num-wrap input {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.12em;
+}
+
+@media(max-width:700px) {
+    .cards-list {
+        grid-template-columns: 1fr;
+    }
+
+    .ewallet-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ewallet-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.ewallet-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

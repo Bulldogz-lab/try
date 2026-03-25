@@ -1,0 +1,5 @@
+# Force files to be treated as PHP
+*.php linguist-language=PHP
+
+# Ignore certain files from language stats
+somefile.hh linguist-detectable=false
